@@ -235,3 +235,32 @@ let individuoJSON = JSON.parse(individuoTexto);
 console.log(individuoJSON);
 
 console.log(individuoJSON.hobbies[0]);
+
+// Imprimindo tamanho  do array
+let exemplo = ["Herculano", "João"];
+let Testexopi = [true, false, true, true];
+
+console.log(exemplo.length);
+console.log(Testexopi.length);
+
+// Exercicio do objeto Onibus
+
+let onibus = {
+    rodas:8,
+    limitePassageiro:40,
+    portas:2,
+};
+
+console.log(onibus.rodas);
+console.log(onibus.limitePassageiro);
+console.log(onibus.portas);
+
+// No javascript vc pode pesquisar a existencia de um dado no array 
+// através do includes
+let stringsNomes = ["João", "Maria", "José", "Herculano", "Rodrigo"];
+
+if(stringsNomes.includes("Salete")){
+    console.log("O nome foi encontrado");
+}else{
+    console.log("O nome não foi encontrado");
+}
