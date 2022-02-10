@@ -10,7 +10,6 @@ class Carrinho{
     }
 
     addItem(item){
-
         let contador = 0;
 
         for(let itemCarrinho in this.itens){
@@ -31,12 +30,18 @@ class Carrinho{
     removeItem(item){
         for(let itemCarrinho in this.itens){
             if(this.itens[itemCarrinho].id == item.id){
+                let obj = this.itens[itemCarrinho];
+                let index = this.itens.findIndex(function(obj){return obj.id == item.id});
                 
-                let obj = this.itens[itemCarrinho]
+                this.qtd -= this.itens[itemCarrinho].id;
+                this.valorTotal -= this.itens[itemCarrinho].preco * this.itens[itemCarrinho].qtd;
+                
+                this.itens.splice(index, 1);
+
+               
             }
         }
-        this.qtd += item.qtd;
-        this.valorTotal += item.preco * item.qtd;
+        
     }
 }
 
@@ -62,5 +67,9 @@ carrinho.addItem({id:01, nome:"Camisa", qtd:2, preco:20});
 console.log(carrinho);
 
 carrinho.addItem({id:03, nome:"shorte", qtd:1, preco:40});
+
+console.log(carrinho);
+
+carrinho.removeItem({id:03, nome:"shorte", qtd:1, preco:40});
 
 console.log(carrinho);
